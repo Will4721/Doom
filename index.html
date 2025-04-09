@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Play DOOM</title>
-  <script src="https://js-dos.com/6.22.7/js-dos.js"></script>
+  
   <style>
     body { margin: 0; background: #000; height: 100vh; display: flex; justify-content: center; align-items: center; }
     #dosbox { width: 800px; height: 600px; }
@@ -11,6 +11,8 @@
 </head>
 <body>
   <canvas id="dosbox"></canvas>
+
+  <script src="https://js-dos.com/6.22.7/js-dos.js"></script>
   <script>
     Dos(document.getElementById("dosbox"), {
       wdosboxUrl: "https://js-dos.com/6.22.7/wdosbox.js"
