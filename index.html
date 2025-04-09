@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>Play DOOM</title>
-  <!-- Include js-dos script FIRST -->
   <script src="https://js-dos.com/6.22/current/js-dos.js"></script>
   <style>
     body {
@@ -22,18 +21,15 @@
 </head>
 <body>
   <div id="dosbox"></div>
-
-  <!-- Custom script to run DOOM -->
   <script>
-    // Wait for js-dos.js to be ready
     Dos(document.getElementById("dosbox"), {
       wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js"
     }).ready((fs, main) => {
-      // Extract the game files
       fs.extract("DOOM.zip").then(() => {
-  main(["doom.exe"]);
-});
+        main(["doom.exe"]);
+      });
     });
   </script>
 </body>
 </html>
+
