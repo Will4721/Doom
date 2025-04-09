@@ -12,15 +12,19 @@
 <body>
   <canvas id="dosbox"></canvas>
 
-  <script src="https://js-dos.com/6.22.7/js-dos.js"></script>
   <script>
-    Dos(document.getElementById("dosbox"), {
-      wdosboxUrl: "https://js-dos.com/6.22.7/wdosbox.js"
-    }).ready((fs, main) => {
-      fs.extract("DOOM.zip").then(() => {
-        main(["doom.exe", "-iwad", "doom1.wad"]); // Updated command
+    const script = document.createElement("script");
+    script.src = "https://js-dos.com/6.22.7/js-dos.js";
+    script.onload = () => {
+      Dos(document.getElementById("dosbox"), {
+        wdosboxUrl: "https://js-dos.com/6.22.7/wdosbox.js"
+      }).ready((fs, main) => {
+        fs.extract("DOOM.zip").then(() => {
+          main(["doom.exe", "-iwad", "doom1.wad"]); // Updated command
+        });
       });
-    });
+    };
+    document.body.appendChild(script);
   </script>
 </body>
 </html>
