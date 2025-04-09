@@ -1,4 +1,30 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Play DOOM</title>
+  <!-- ✅ Include js-dos script FIRST -->
+  <script src="https://js-dos.com/6.22/current/js-dos.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #dosbox {
+      width: 800px;
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div id="dosbox"></div>
+
+  <!-- ✅ Wait until after js-dos.js is loaded -->
+  <script>
     Dos(document.getElementById("dosbox"), {
       wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js"
     }).ready((fs, main) => {
@@ -7,4 +33,6 @@
       });
     });
   </script>
-  
+</body>
+</html>
+
