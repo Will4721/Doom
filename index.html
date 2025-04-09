@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Play DOOM</title>
-  <script src="https://js-dos.com/6.22/current/js-dos.js"></script>
+  <script src="https://js-dos.com/6.22.7/js-dos.js"></script>
   <style>
-    body {
-      margin: 0;
-      background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    #dosbox {
-      width: 800px;
-      height: 600px;
-    }
+    body { margin: 0; background: #000; height: 100vh; display: flex; justify-content: center; align-items: center; }
+    #dosbox { width: 800px; height: 600px; }
   </style>
 </head>
 <body>
-  <canvas id="dosbox"></canvas> <!-- Changed from div to canvas -->
+  <canvas id="dosbox"></canvas>
   <script>
     Dos(document.getElementById("dosbox"), {
-      wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js"
+      wdosboxUrl: "https://js-dos.com/6.22.7/wdosbox.js"
     }).ready((fs, main) => {
       fs.extract("DOOM.zip").then(() => {
-        main(["doom.exe"]);
+        main(["doom.exe", "-iwad", "doom1.wad"]); // Updated command
       });
     });
   </script>
